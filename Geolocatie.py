@@ -20,15 +20,9 @@ while True:
     else:
         print("Voeg een correct csv-bestand toe met de kolommen: gemeente, straat en huisnummer.")
 
-#controleren of de voorwaarden voor een standaard of gepersonaliseerde kaart aanwezig zijn.
 standaard_kaart = extra_kolommen
-standaard_kaart == False
-
-gepersonaliseerde_kaart = extra_kolommen
-gepersonaliseerde_kaart == False
 
 if standaard_kaart != "ja":
-    standaard_kaart == True
     print(titel + " wordt nu gemaakt en zal automatisch in je browser geopend worden. Een nieuw csv bestand met coördinaten wordt in de map geplaatst.")
 
     # importeer csv met bestandsnaam "adressen.csv", met daarin een lijst met adressen met volgende kolomnamen: [gemeente][straat][huisnummer]
@@ -73,8 +67,10 @@ if standaard_kaart != "ja":
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     fig.show()
 
-if gepersonaliseerde_kaart == "ja":
-    gepersonaliseerde_kaart == True
+    aantal_gevonden_coordinaten = len(df_kaart)
+    print(f"{aantal_gevonden_coordinaten} adressen konden gekoppeld worden aan coördinaten.")
+
+else:
     print(titel + " wordt nu gemaakt en zal automatisch in je browser geopend worden.")
 
     # importeer csv met bestandsnaam "adressen.csv", met daarin een lijst met adressen met volgende kolomnamen: [gemeente][straat][huisnummer]
@@ -126,8 +122,8 @@ if gepersonaliseerde_kaart == "ja":
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     fig.show()
 
-aantal_gevonden_coordinaten = len(df_lijst)
-print(f"{aantal_gevonden_coordinaten} adressen konden gekoppeld worden aan coördinaten.")
+    aantal_gevonden_coordinaten = len(df_lijst)
+    print(f"{aantal_gevonden_coordinaten} adressen konden gekoppeld worden aan coördinaten.")
 
 
 
